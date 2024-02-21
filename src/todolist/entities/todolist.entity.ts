@@ -16,4 +16,7 @@ export class Todolist {
 
   @Column({ default: '' })
   desc: string;
+
+  @Column('json')
+  test: { name: string };
 }
