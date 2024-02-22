@@ -18,5 +18,5 @@ export class Todolist {
   desc: string;
 
   @Column('json')
-  test: { name: string };
+  test: { name: string; children: { label: string; value: string }[] };
 }
