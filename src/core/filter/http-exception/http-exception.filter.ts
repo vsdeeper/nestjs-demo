@@ -21,7 +21,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
     const message = exception.message
       ? exception.message
       : `${status >= 500 ? 'Service Error' : 'Client Error'}`;
-    const errorResponse = { data: null, message, code: 1 };
+    const errorResponse = { data: null, message, code: status };
 
     response
       .status(status)

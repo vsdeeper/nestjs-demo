@@ -13,9 +13,9 @@ export class TodolistService {
   ) {}
   async create(createTodolistDto: CreateTodolistDto) {
     const { name } = createTodolistDto;
-    if (!name) throw new HttpException('名称为必填项', 200);
+    if (!name) throw new HttpException('名称为必填项', 430);
     const find = await this.todolist.findOneBy({ name });
-    if (find) throw new HttpException('该名称已存在', 200);
+    if (find) throw new HttpException('该名称已存在', 431);
     const res = await this.todolist.save(createTodolistDto);
     return res;
   }
